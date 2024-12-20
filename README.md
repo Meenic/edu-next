@@ -1,69 +1,52 @@
 # EduNext
 
-EduNext is a full-stack educational platform template built with Next.js, Prisma, MySQL, and Auth.js. It features secure user authentication, easy database integration, and scalable architecture for educational projects.
+EduNext is a versatile full-stack template designed for new developers. Built with Next.js, Prisma, MySQL, and Auth.js, it offers an easy-to-use foundation to kickstart development projects with secure authentication, scalable architecture, and modern tools.
 
-## Table of Contents
+## 🚀 Features
 
-- Features
-- Getting Started
-- Project Structure
-- Configuration
-- Usage
-- Contributing
-- License
+- **Next.js**: Server-side rendering and static generation.
+- **Prisma**: Modern database toolkit.
+- **MySQL**: Relational database system.
+- **Auth.js**: GitHub and credentials-based authentication.
+- **Tailwind CSS**: Utility-first CSS framework.
+- **TypeScript**: Strongly typed JavaScript.
 
-## Features
-
-- **Next.js**: A powerful React framework for building server-side rendered and statically generated web applications.
-- **Prisma**: A modern database toolkit for TypeScript and Node.js.
-- **MySQL**: A popular relational database management system.
-- **Auth.js**: Secure user authentication with GitHub and credentials.
-- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
-- **TypeScript**: Strongly typed programming language that builds on JavaScript.
-
-## Getting Started
+## 🛠 Getting Started
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
+- Node.js (v14+)
 - npm or yarn
 - MySQL database
 
-### Installation
+### Setup
 
-1. Clone the repository:
+1. Clone the repo and install dependencies:
 
    ```sh
    git clone https://github.com/Meenic/edu-next.git
    cd edu-next
-   ```
-
-2. Install dependencies:
-
-   ```sh
    npm install
    # or
    yarn install
    ```
 
-3. Set up environment variables:
-
-   Create a .env file in the root directory and add the following variables:
+2. Create a `.env` file and configure environment variables:
 
    ```env
    DATABASE_URL="mysql://user:password@localhost:3306/database"
-   GITHUB_CLIENT_ID="your-github-client-id"
-   GITHUB_CLIENT_SECRET="your-github-client-secret"
-   NEXTAUTH_SECRET="your-nextauth-secret"
+   GITHUB_CLIENT_ID="your-client-id"
+   GITHUB_CLIENT_SECRET="your-client-secret"
+   NEXTAUTH_SECRET="your-secret"
    ```
 
-4. Run database migrations:
+3. Run database migrations:
 
    ```sh
    npx prisma migrate dev
    ```
 
-5. Start the development server:
+4. Start the dev server:
 
    ```sh
    npm run dev
@@ -71,9 +54,9 @@ EduNext is a full-stack educational platform template built with Next.js, Prisma
    yarn dev
    ```
 
-   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   Access at [http://localhost:3000](http://localhost:3000).
 
-## Project Structure
+## 📂 Project Structure
 
 ```plaintext
 .env
@@ -96,75 +79,23 @@ tailwind.config.ts
 tsconfig.json
 ```
 
-- **.env**: Environment variables.
-- **.next/**: Next.js build output.
-- **package.json**: Project dependencies and scripts.
-- **prisma/**: Prisma schema and migrations.
-- **public/**: Static assets.
-- **src/**: Source code.
-  - **actions/**: Server-side actions.
-  - **app/**: Next.js app directory.
-  - **auth.config.ts**: Authentication configuration.
-  - **components/**: React components.
-  - **data/**: Database access layer.
-  - **lib/**: Utility functions and libraries.
-  - **middleware.ts**: Custom middleware.
-  - **schemas/**: Validation schemas.
-- **tailwind.config.ts**: Tailwind CSS configuration.
-- **tsconfig.json**: TypeScript configuration.
+## ⚙️ Configuration
 
-## Configuration
+- **Auth**: Configure in `auth.config.ts` with `.env` values.
+- **Database**: Prisma schema in `schema.prisma`. Update `DATABASE_URL`.
+- **Tailwind CSS**: Config in `tailwind.config.ts`.
 
-### Authentication
+## 🧾 Commands
 
-Authentication is configured in auth.config.ts. It uses GitHub and credentials providers. Update the .env file with your GitHub client ID and secret.
+- **Dev Server**: `npm run dev`
+- **Build**: `npm run build`
+- **Start**: `npm run start`
+- **Lint**: `npm run lint`
 
-### Database
+## 🤝 Contributing
 
-Prisma is used for database access. The schema is defined in schema.prisma. Update the `DATABASE_URL` in the .env file with your MySQL connection string.
+Contributions are welcome! Open an issue or pull request.
 
-### Tailwind CSS
+## 📜 License
 
-Tailwind CSS is configured in tailwind.config.ts and imported in globals.css.
-
-## Usage
-
-### Running the Development Server
-
-```sh
-npm run dev
-# or
-yarn dev
-```
-
-### Building for Production
-
-```sh
-npm run build
-# or
-yarn build
-```
-
-### Starting the Production Server
-
-```sh
-npm run start
-# or
-yarn start
-```
-
-### Linting
-
-```sh
-npm run lint
-# or
-yarn lint
-```
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
+MIT License. See `LICENSE` for details.
