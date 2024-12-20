@@ -49,15 +49,20 @@ export default function Navbar({ session }: Props) {
   }, [pathname]);
 
   return (
-    <nav className="sticky top-0 z-40 w-full bg-background">
+    <nav className="sticky top-0 z-40 w-full bg-background/75 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 py-4 max-w-7xl">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <Link href="/" className="text-2xl font-bold">
-              EduNext
+          <div className="flex items-center space-x-6">
+            <Link href="/" className="relative group">
+              <div className="absolute inset-0 bg-primary/10 dark:bg-primary/20 rounded-lg blur"></div>
+              <div className="relative px-4 py-2 bg-background/50 dark:bg-background/30 backdrop-blur-md rounded-lg border border-primary/20 dark:border-primary/30 transition-all duration-300 group-hover:bg-background/70 dark:group-hover:bg-background/50">
+                <span className="text-2xl font-bold">
+                  EduNext
+                </span>
+              </div>
             </Link>
             <div
-              className="hidden md:flex items-center space-x-1 relative"
+              className="hidden md:flex items-center relative"
               ref={navRef}
             >
               <div
@@ -85,7 +90,8 @@ export default function Navbar({ session }: Props) {
               </Button>
             )}
             <Button variant="ghost" size="icon" className="md:hidden">
-              <Menu />
+              <Menu className="h-6 w-6" />
+              <span className="sr-only">Toggle menu</span>
             </Button>
           </div>
         </div>
@@ -106,7 +112,9 @@ function NavLink({ href, children, isActive }: NavLinkProps) {
       href={href}
       className={cn(
         "px-3 py-2 text-sm font-medium rounded-full transition-colors relative z-10",
-        isActive ? "text-primary-foreground" : "text-foreground"
+        isActive
+          ? "text-primary-foreground"
+          : "text-foreground/80 hover:text-foreground"
       )}
     >
       {children}
