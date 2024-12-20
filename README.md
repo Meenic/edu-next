@@ -1,36 +1,170 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EduNext
+
+EduNext is a full-stack educational platform template built with Next.js, Prisma, MySQL, and Auth.js. It features secure user authentication, easy database integration, and scalable architecture for educational projects.
+
+## Table of Contents
+
+- Features
+- Getting Started
+- Project Structure
+- Configuration
+- Usage
+- Contributing
+- License
+
+## Features
+
+- **Next.js**: A powerful React framework for building server-side rendered and statically generated web applications.
+- **Prisma**: A modern database toolkit for TypeScript and Node.js.
+- **MySQL**: A popular relational database management system.
+- **Auth.js**: Secure user authentication with GitHub and credentials.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **TypeScript**: Strongly typed programming language that builds on JavaScript.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
+- Node.js (v14 or higher)
+- npm or yarn
+- MySQL database
+
+### Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/Meenic/edu-next.git
+   cd edu-next
+   ```
+
+2. Install dependencies:
+
+   ```sh
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Set up environment variables:
+
+   Create a .env file in the root directory and add the following variables:
+
+   ```env
+   DATABASE_URL="mysql://user:password@localhost:3306/database"
+   GITHUB_CLIENT_ID="your-github-client-id"
+   GITHUB_CLIENT_SECRET="your-github-client-secret"
+   NEXTAUTH_SECRET="your-nextauth-secret"
+   ```
+
+4. Run database migrations:
+
+   ```sh
+   npx prisma migrate dev
+   ```
+
+5. Start the development server:
+
+   ```sh
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Project Structure
+
+```plaintext
+.env
+.gitignore
+.next/
+package.json
+prisma/
+  schema.prisma
+public/
+src/
+  actions/
+  app/
+  auth.config.ts
+  components/
+  data/
+  lib/
+  middleware.ts
+  schemas/
+tailwind.config.ts
+tsconfig.json
+```
+
+- **.env**: Environment variables.
+- **.next/**: Next.js build output.
+- **package.json**: Project dependencies and scripts.
+- **prisma/**: Prisma schema and migrations.
+- **public/**: Static assets.
+- **src/**: Source code.
+  - **actions/**: Server-side actions.
+  - **app/**: Next.js app directory.
+  - **auth.config.ts**: Authentication configuration.
+  - **components/**: React components.
+  - **data/**: Database access layer.
+  - **lib/**: Utility functions and libraries.
+  - **middleware.ts**: Custom middleware.
+  - **schemas/**: Validation schemas.
+- **tailwind.config.ts**: Tailwind CSS configuration.
+- **tsconfig.json**: TypeScript configuration.
+
+## Configuration
+
+### Authentication
+
+Authentication is configured in auth.config.ts. It uses GitHub and credentials providers. Update the .env file with your GitHub client ID and secret.
+
+### Database
+
+Prisma is used for database access. The schema is defined in schema.prisma. Update the `DATABASE_URL` in the .env file with your MySQL connection string.
+
+### Tailwind CSS
+
+Tailwind CSS is configured in tailwind.config.ts and imported in globals.css.
+
+## Usage
+
+### Running the Development Server
+
+```sh
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Building for Production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm run build
+# or
+yarn build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Starting the Production Server
 
-## Learn More
+```sh
+npm run start
+# or
+yarn start
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Linting
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+npm run lint
+# or
+yarn lint
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+Contributions are welcome! Please open an issue or submit a pull request.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License. See the LICENSE file for details.
